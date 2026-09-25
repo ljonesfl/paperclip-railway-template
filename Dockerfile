@@ -23,7 +23,7 @@ RUN pnpm --filter @paperclipai/server build
 RUN test -f server/dist/index.js
 
 # Runtime image (direct Paperclip server, no wrapper).
-FROM node:22-bookworm
+FROM node:24
 ENV NODE_ENV=production
 ENV CLAUDE_CODE_BUBBLEWRAP=1
 # Match upstream production image defaults (paperclipai/paperclip Dockerfile) so
